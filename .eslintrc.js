@@ -7,8 +7,6 @@ module.exports = {
     'xo',
     'xo-typescript',
     'xo-react',
-    'plugin:import/recommended',
-    'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
   ],
@@ -20,11 +18,28 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'import'],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
     '@typescript-eslint/naming-convention': 'off',
     'capitalized-comments': 'off',
-    'import/order': 'error',
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: [
+          {
+            name: '@mui/system',
+            importNames: ['styled', 'keyframes'],
+            message: 'Please use styled from @mui/material instead.',
+          },
+        ],
+        patterns: [
+          {
+            group: ['../../*'],
+            message: 'Please use path aliases instead.',
+          },
+        ],
+      },
+    ],
   },
   globals: {
     React: true,
@@ -32,12 +47,4 @@ module.exports = {
     document: true,
   },
   ignorePatterns: ['react-app-env.d.ts', 'reportWebVitals.ts'],
-  settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
-    'import/resolver': {
-      typescript: {},
-    },
-  },
 };

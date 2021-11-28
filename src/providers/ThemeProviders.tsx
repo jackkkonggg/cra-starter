@@ -1,9 +1,9 @@
+import { FC, ReactNode } from 'react';
 import { orange } from '@mui/material/colors';
 import {
   createTheme,
   ThemeProvider as MuiThemeProvider,
 } from '@mui/material/styles';
-import { FC, ReactNode } from 'react';
 
 interface ThemeProvidersProps {
   children: ReactNode;
