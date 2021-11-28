@@ -1,6 +1,6 @@
+import { FC } from 'react';
 import { Root } from '@pages/Root';
 import { ThemeProviders } from '@providers/ThemeProviders';
-import { FC } from 'react';
 
 export const App: FC = () => {
   return (
