@@ -1,7 +1,6 @@
-import { keyframes, styled } from '@mui/system';
 import { FC } from 'react';
 import logo from '@assets/logo.svg';
-import { Link, Typography } from '@mui/material';
+import { Link, Typography, styled, keyframes } from '@mui/material';
 
 const RootFrame = styled('div')`
   text-align: center;
